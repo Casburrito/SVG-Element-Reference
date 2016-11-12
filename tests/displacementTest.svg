@@ -3,7 +3,7 @@
   <filter id="displacementFilter">
     <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="3" result="turbulence" />
     <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="G">
-      <animate attributeName="scale" from="50" to="0" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="scale" from="50" to="0" dur="5s" fill="freeze"/>
     </feDisplacementMap>
   </filter>
 
