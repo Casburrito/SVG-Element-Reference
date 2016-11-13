@@ -1,0 +1,32 @@
+<!-- The animate element is put inside a shape element and defines how an attribute of
+an element changes over the animation. The attribute will change from the initial
+value to the end value in the duration specified. -->
+
+<!-- Global attributes:
+  - conditional processing attributes
+  - core attributes
+  - animation event attributes
+  - Xlink attributes
+  - animation attribute target attributes
+  - animation timing attributes
+  - animation value attributes
+  - animation addition attributes
+  - externalResourcesRequired
+
+Specific attributes
+  - attributeName
+  - attributeType
+  - from
+  - to
+  - dur
+  - repeatCount -->
+
+
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" fill="#4b5562" stroke="#febc34" stroke-width="2">
+    <animate attributeName="x" from="-150" to="400"
+        dur="2s" repeatCount="indefinite"/>
+  </use>
+
+</svg>

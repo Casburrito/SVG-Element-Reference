@@ -1,0 +1,28 @@
+<!-- The <feImage> SVG filter primitive fetches image data from an external source and
+provides the pixel data as output (meaning if the external source is an SVG image,
+it is rasterized.) -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+  - XLink attributes
+  - class
+  - style
+  - externalResourcesRequired
+
+Specific attributes:
+  - preserveAspectRatio
+  - xlink:href -->
+
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="image">
+      <feImage xlink:href="placeholders/viking.png"/>
+    </filter>
+  </defs>
+
+  <rect x="10%" y="10%" width="80%" height="80%"
+      style="filter:url(#image);"/>
+</svg>

@@ -1,0 +1,39 @@
+<!-- The <feDropShadow> filter primitive creates a drop shadow of the input image.
+It is a shorthand filter, and is defined in terms of combinations of other filter
+primitives. The result of the <feDropShadow> filter is equivalent to the following:
+
+<feGaussianBlur in="alpha-channel-of-feDropShadow-in" stdDeviation="stdDeviation-of-feDropShadow"
+/>
+<feOffset dx="dx-of-feDropShadow" dy="dy-of-feDropShadow" result="offsetblur" />
+<feFlood flood-color="flood-color-of-feDropShadow" flood-opacity="flood-opacity-of-feDropShadow"
+/>
+<feComposite in2="offsetblur" operator="in" />
+<feMerge>
+  <feMergeNode/>
+  <feMergeNode in="in-of-feDropShadow" />
+</feMerge> -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+
+Specific attributes:
+  - class
+  - style
+  - in
+  - stdDeviation
+  - dx
+  - dy -->
+
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="4" dy="8" stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" style="fill: #4b5562; filter: url(#shadow)"/>
+
+</svg>

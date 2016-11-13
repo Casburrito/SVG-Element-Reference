@@ -1,0 +1,26 @@
+<!-- The <fePointLight> SVG filter primitive allows to create a point light effect. -->
+
+<!-- Global attributes:
+  - core attributes
+
+Specific attributes:
+  - x
+  - y
+  - z -->
+
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="spotlight">
+      <feSpecularLighting result="spotlight" specularConstant="1.5"
+          specularExponent="80" lighting-color="#FFF">
+        <fePointLight x="100" y="100" z="220"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="spotlight" operator="out"
+          k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+  </defs>
+
+  <image xlink:href="placeholders/viking.png" x="10%" y="10%"
+      width="80%" height="80%" style="filter:url(#spotlight);"/>
+</svg>

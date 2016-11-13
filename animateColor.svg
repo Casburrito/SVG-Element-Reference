@@ -1,0 +1,31 @@
+<!-- The <animateColor> SVG element specifies a color transformation over time. -->
+
+<!-- Global attributes:
+  - conditional processing attributes
+  - core attributes
+  - animation event attributes
+  - Xlink attributes
+  - animation attribute target attributes
+  - animation timing attributes
+  - animation value attributes
+  - animation addition attributes
+  - externalResourcesRequired
+
+Specific attributes:
+  - by
+  - from
+  - to -->
+
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <desc>Deprecated attribute, use 'animate' instead, or style with CSS</desc>
+
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" stroke-width="2">
+    <animateColor attributeName="fill" attributeType="XML"
+        from="#febc34" to="#4b5562" dur="6s" repeatCount="indefinite"/>
+    <animateColor attributeName="stroke" attributeType="XML"
+        from="#4b5562" to="#febc34" dur="6s" repeatCount="indefinite"/>
+  </use>
+
+</svg>

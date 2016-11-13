@@ -1,0 +1,31 @@
+<!-- The <feMorphology> SVG filter primitive is used to erode or dilate the input image.
+It's usefulness lies especially in fattening or thinning effects. -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+  - class
+  - style
+
+Specific attributes:
+  - in
+  - operator
+  - radius -->
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="180">
+
+  <filter id="erode">
+    <feMorphology operator="erode" radius=".33"/>
+  </filter>
+
+  <filter id="dilate">
+    <feMorphology operator="dilate" radius="1.33"/>
+  </filter>
+
+  <text y="1em" font-family="FuturaStd-Book, Helvetica, Arial">Normal text</text>
+  <text id="thin" y="2em" font-family="FuturaStd-Book, Helvetica, Arial" style="filter: url(#erode)">Thinned text</text>
+  <text id="thick" y="3em" font-family="FuturaStd-Book, Helvetica, Arial" style="filter: url(#dilate)">Fattened text</text>
+
+</svg>

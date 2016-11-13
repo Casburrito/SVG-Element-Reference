@@ -1,0 +1,37 @@
+<!-- The animateTransform element animates a transformation attribute on a target element,
+thereby allowing animations to control translation, scaling, rotation and/or skewing. -->
+
+<!-- Global attributes:
+  - conditional processing attributes
+  - core attributes
+  - animation event attributes
+  - Xlink attributes
+  - animation attribute target attributes
+  - animation timing attributes
+  - animation value attributes
+  - animation addition attributes
+  - externalResourcesRequired
+
+Specific attributes:
+  - by
+  - from
+  - to
+  - type -->
+
+
+<svg width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg"
+  version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <use x="15" y="15" width="200" height="200" xlink:href="placeholders/viking.svg#viking" fill="#febc34" stroke="#4b5562" stroke-width="2">
+    <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      from="0 115 115"
+                      to="360 115 115"
+                      dur="10s"
+                      repeatCount="indefinite"/>
+    <animate attributeName="fill" from="#febc34" to="#4b5562" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="stroke" from="#4b5562" to="#febc34" dur="10s" repeatCount="indefinite"/>
+  </use>
+
+</svg>

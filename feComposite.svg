@@ -1,0 +1,36 @@
+<!-- This filter primitive performs the combination of two input images pixel-wise in
+image space using one of the Porter-Duff compositing operations: over, in, atop,
+out, xor and lighter. Additionally, a component-wise arithmetic operation (with the
+result clamped between [0..1]) can be applied. The arithmetic operation is useful
+for combining the output from the <feDiffuseLighting> and <feSpecularLighting>
+filters with texture data. If the arithmetic operation is chosen, each result pixel
+is computed using the following formula:
+
+result = k1*i1*i2 + k2*i1 + k3*i2 + k4
+
+where:
+
+- i1 and i2 indicate the corresponding pixel channel values of the input
+  image, which map to in and in2 respectively
+- k1, k2, k3 and k4 indicate the values
+  of the attributes with the same name -->
+
+<!-- Global attributes
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+  - class
+  - style
+
+Specific attributes:
+  - in
+  - in2
+  - operator
+  - k1
+  - k2
+  - k3
+  - k4 -->
+
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+</svg>

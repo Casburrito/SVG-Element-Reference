@@ -1,0 +1,30 @@
+<!-- The <feTurbulence> SVG filter primitive creates an image using the Perlin turbulence
+function. It allows the synthesis of artificial textures like clouds or marble.
+The resulting image will fill the entire filter primitive subregion. -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+  - class
+  - style
+
+Specific attributes:
+  - baseFrequency
+  - numOctaves
+  - seed
+  - stitchTiles
+  - type -->
+
+
+<svg width="200" height="200" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <filter id="displacementFilter">
+    <feTurbulence type="turbulence" baseFrequency="0.05"
+        numOctaves="2" result="turbulence"/>
+    <feDisplacementMap in2="turbulence" in="SourceGraphic"
+        scale="50" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" style="filter: url(#displacementFilter)"/>
+
+</svg>

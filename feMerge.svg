@@ -1,0 +1,22 @@
+<!-- The <feMerge> SVG element allows filter effects to be applied concurrently instead
+of sequentially. This is achieved by other filters storing their output via the
+result attribute and then accessing it in a <feMergeNode> child. -->
+
+<!-- The feMergeNode takes the result of another filter to be processed by its parent <feMerge> -->
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+
+  <filter id="feOffset" x="-40" y="-20" width="100" height="200">
+    <feOffset in="SourceGraphic" dx="60" dy="60" />
+    <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+    <feMerge>
+      <feMergeNode in="blur2" />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+
+  <rect x="40" y="40" width="100" height="100"
+    style="stroke: #000000; fill: green; filter: url(#feOffset);" />
+  <rect x="40" y="40" width="100" height="100"
+    style="stroke : #000000; fill: green;" />
+</svg>

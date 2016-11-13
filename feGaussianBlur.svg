@@ -1,0 +1,46 @@
+<!-- The <feGaussianBlur> SVG filter primitive blurs the input image by the amount specified
+in stdDeviation, which defines the bell-curve. -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+  - class
+  - style
+
+Specific attributes:
+  - in
+  - stdDeviation
+  - edgeMode -->
+
+
+<svg width="340" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <filter id="blurMe">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="0" >
+      <animate attributeName="stdDeviation" from="0" to="5" dur="1s" begin="blurry.click" fill="freeze"/>
+    </feGaussianBlur>
+  </filter>
+
+  <filter id="dropShadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="0" >
+      <animate attributeName="stdDeviation" from="0" to="5" dur="1s" begin="shadowy.click" fill="freeze"/>
+    </feGaussianBlur>
+    <feOffset dx="0" dy="0" >
+      <animate attributeName="dx" from="0" to="2" dur="1s" begin="shadowy.click" fill="freeze"/>
+      <animate attributeName="dy" from="0" to="4" dur="1s" begin="shadowy.click" fill="freeze"/>
+    </feOffset>
+    <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+
+  <circle cx="60" cy="60" r="50" fill="green" />
+
+  <circle id="blurry" cx="170" cy="60" r="50" fill="green"
+          filter="url(#blurMe)" />
+
+  <circle id="shadowy" cx="280"  cy="60" r="50" fill="green"
+          filter="url(#dropShadow)" />
+</svg>

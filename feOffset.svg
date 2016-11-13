@@ -1,0 +1,27 @@
+<!-- The <feOffset> SVG filter primitive allows to offset the input image. The input
+image as a whole is offset by the values specified in the dx and dy attributes. -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - filter primitive attributes
+  - class
+  - style
+
+Specific attributes:
+  - in
+  - dx
+  - dy -->
+
+
+<svg width="260" height="260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="feOffset" x="-40" y="-20" width="100" height="200">
+      <feOffset in="SourceGraphic" dx="60" dy="60" />
+    </filter>
+  </defs>
+
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" style="stroke: #febc34; stroke-width: 2; fill: #4b5562; filter: url(#feOffset)"/>
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" style="stroke: #febc34; stroke-width: 2; fill: #4b5562;"/>
+
+</svg>

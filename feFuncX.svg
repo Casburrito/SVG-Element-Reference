@@ -1,0 +1,22 @@
+<!-- The <feFuncA> SVG filter primitive defines the transfer function for the alpha component
+of the input graphic of its parent <feComponentTransfer> element.
+
+The <feFuncB> SVG filter primitive defines the transfer function for the blue component
+of the input graphic of its parent <feComponentTransfer> element.
+
+The <feFuncG> SVG filter primitive defines the transfer function for the green component
+of the input graphic of its parent <feComponentTransfer> element.
+
+The <feFuncR> SVG filter primitive defines the transfer function for the red component
+of the input graphic of its parent <feComponentTransfer> element. -->
+
+<!-- Global attributes:
+  - core attributes
+  - transfer function attributes
+
+Specific attributes:
+  - none -->
+
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+</svg>
