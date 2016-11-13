@@ -12,7 +12,7 @@ with negative x and y values -->
 
         <filter id="bump" x="0" y="0" height="100%" width="100%">
             <feColorMatrix in="SourceGraphic" type="luminanceToAlpha" result="bumpMap"/>
-            <feDiffuseLighting in="bumpMap" surfaceScale="1.25" diffuseConstant="8" result="shading">
+            <feDiffuseLighting in="bumpMap" surfaceScale="-1.5" diffuseConstant="9" result="shading">
                 <fePointLight in="SourceGraphic" id="light" x="360" y="360" z="10">
                     <animate attributeName="x" from="720" to="180" dur="5s" repeatCount="indefinite"/>
                     <animate attributeName="y" from="720" to="180" dur="5s" repeatCount="indefinite"/>
@@ -37,7 +37,7 @@ with negative x and y values -->
 
     </defs>
 
-    <polygon fill="url(#brick)" style="filter: url(#bump)" points="0,360 0,125 225,0 450,125 450,360"/>
+    <polygon fill="url(#brick)" style="filter: url(#bump)" points="0,360 0,125 225,0 450,125 450,360" stroke="black" stroke-width="2"/>
 
     <rect x="175" y="140" width="100" height="125" fill="#4b5562" stroke="grey" stroke-width="15" style="filter: url(#window)"/>
 
