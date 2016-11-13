@@ -1,0 +1,35 @@
+<!-- The <radialGradient> SVG element lets authors define radial gradients to fill or
+stroke graphical elements. -->
+
+<!-- Global attributes:
+  - core attributes
+  - presentation attributes
+  - Xlink attributes
+  - class
+  - style
+  - externalResourcesRequired
+
+Specific attributes:
+  - gradientUnits
+  - gradientTransform
+  - cx
+  - cy
+  - r
+  - fx
+  - fy
+  - fr
+  - spreadMethod
+  - xlink:href -->
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+        <radialGradient id="exampleGradient">
+            <stop offset="10%" stop-color="#febc34"/>
+            <stop offset="95%" stop-color="#4b5562"/>
+        </radialGradient>
+    </defs>
+
+  <use x="0" y="0" width="200" height="200" xlink:href="placeholders/viking.svg#viking" fill="url(#exampleGradient)"/>
+
+</svg>
