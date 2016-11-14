@@ -1,0 +1,21 @@
+<!-- Refactor to make specular light use parent coordinate system rather than offestting
+with negative x and y values -->
+
+
+<svg width="450" height="360" id="target" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+
+        <pattern id="brick" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image xlink:href="brick.jpg" x="0" y="0" width="450" height="360"/>
+        </pattern>
+
+        <filter id="bump" x="0" y="0" height="100%" width="100%">
+            <feColorMatrix in="SourceGraphic" type="luminanceToAlpha" result="bumpMap"/>
+        </filter>
+
+    </defs>
+
+    <polygon fill="url(#brick)" style="filter: url(#bump)" points="0,360 0,125 225,0 450,125 450,360" stroke="black" stroke-width="2"/>
+
+</svg>

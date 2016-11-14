@@ -1,0 +1,147 @@
+<!-- Use the  HTML <video> element to embed video content in a document. The video element
+contains one or more video sources. To specify a video source, use either the src
+attribute or the <source> element; the browser will choose the most suitable one.
+
+For a list of supported formats, see Media formats supported by the audio and video
+elements (Mozilla Foundation). -->
+
+<!-- This element supports the global attributes.
+
+autoplay:
+  A Boolean attribute; if specified, the video automatically begins to play back as soon
+  as it can do so without stopping to finish loading the data.
+
+  Note: Some versions of Chrome only acknowledge autostart, rather than autoplay
+
+buffered:
+  An attribute you can read to determine the time ranges of the buffered media.
+  This attribute contains a TimeRanges object.
+
+controls:
+  If this attribute is present, the browser will offer controls to allow the user to
+  control video playback, including volume, seeking, and pause/resume playback.
+
+crossorigin:
+  This enumerated attribute indicates whether to use CORS to fetch the related image.
+  CORS-enabled resources can be reused in the <canvas> element without being tainted.
+  The allowed values are:
+    - anonymous:
+        Sends a  cross-origin request without a credential. In other words, it sends
+        the Origin: HTTP header without a cookie, X.509 certificate, or performing
+        HTTP Basic authentication. If the server does not give credentials to the
+        origin site (by not setting the Access-Control-Allow-Origin: HTTP header),
+        the image will be tainted, and its usage restricted.
+    - use-credentials:
+        Sends a  cross-origin request with a credential. In other words, it sends
+        the Origin: HTTP header with a cookie, a certificate, or performing HTTP
+        Basic authentication. If the server does not give credentials to the origin
+        site (through Access-Control-Allow-Credentials: HTTP header), the image will
+        be tainted and its usage restricted.
+
+    When not present, the resource is fetched without a CORS request (i.e. without
+    sending the Origin: HTTP header), preventing its non-tainted used in <canvas>
+    elements. If invalid, it is handled as if the enumerated keyword anonymous was
+    used. See CORS settings attributes for additional information.
+
+height:
+  The height of the video's display area, in CSS pixels.
+
+loop:
+  A Boolean attribute; if specified, we will, upon reaching the end of the video,
+  automatically seek back to the start.
+
+muted:
+  A Boolean attribute which indicates the default setting of the audio contained
+  in the video. If set, the audio will be initially silenced. Its default value is
+  false, meaning that the audio will be played when the video is played.
+
+played:
+  A TimeRanges object indicating all the ranges of the video that have been played.
+
+preload:
+  This enumerated attribute is intended to provide a hint to the browser about what
+  the author thinks will lead to the best user experience. It may have one of the
+  following values:
+    - none: indicates that the video should not be preloaded.
+    - metadata: indicates that only video metadata (e.g. length) is fetched.
+    - auto: indicates that the whole video file could be downloaded, even if the user
+      is not expected to use it.
+    - the empty string: synonym of the auto value.
+
+  If not set, its default value is browser-defined (i.e. each browser may have its
+  default value). The spec advises it to be set to metadata.
+
+  Usage notes:
+  The autoplay attribute has precedence over preload. If autoplay is specified,
+  the browser would obviously need to start downloading the video for playback.
+
+  The specification does not force the browser to follow the value of this attribute;
+  it is a mere hint.
+
+poster:
+  A URL indicating a poster frame to show until the user plays or seeks. If this
+  attribute isn't specified, nothing is displayed until the first frame is available;
+  then the first frame is shown as the poster frame.
+
+src:
+  The URL of the video to embed. This is optional; you may instead use the <source>
+  element within the video block to specify the video to embed.
+
+width:
+  The width of the video's display area, in CSS pixels. -->
+
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!-- Simple video example -->
+    <video src="videofile.webm" autoplay poster="posterimage.jpg">
+        Sorry, your browser doesn't support embedded videos, but don't worry, you can
+        <a href="videofile.webm">download it</a>
+        and watch it with your favorite video player!
+    </video>
+
+    <!-- Video with subtitles -->
+    <video src="foo.webm">
+        <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
+        <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska">
+    </video>
+
+<!-- The first example plays a video, starting playback as soon as enough of the video has
+been received to allow playback without pausing to download more. Until the video starts
+playing, the image "posterimage.jpg" is displayed in its place.
+
+The second example allows the user to choose between different subtitles. -->
+
+    <desc>Multiple sources example</desc>
+
+    <video width="480" controls poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm">
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">
+      Your browser doesn't support HTML5 video tag.
+    </video>
+
+</svg>
+
+<!-- Server support:
+
+If the MIME type for the video is not set correctly on the server, the video may not
+show or show a gray box containing an X (if JavaScript is enabled).
+
+If you use Apache Web Server to serve Ogg Theora videos, you can fix this problem by
+adding the video file type extensions to "video/ogg" MIME type.  The most common video
+file type extensions are ".ogm", ".ogv", or ".ogg". To do this, edit the "mime.types"
+file in "/etc/apache" or use the "AddType" configuration directive in httpd.conf.
+
+    AddType video/ogg .ogm
+    AddType video/ogg .ogv
+    AddType video/ogg .ogg
+
+If you serve your videos as WebM, you can fix this problem for the Apache Web Server
+by adding the extension used by your video files (".webm" is the most common one) to
+the MIME type "video/webm" via the "mime.types" file in "/etc/apache" or via the "AddType"
+configuration directive in httpd.conf.
+
+    AddType video/webm .webm
+
+Your web host may provide an easy interface to MIME type configuration changes for new
+technologies until a global update naturally occurs. -->
